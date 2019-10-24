@@ -6,6 +6,8 @@ package io.zipcoder;
  */
 public class StringsAndThings {
 
+
+
     /**
      * Given a string, count the number of words ending in 'y' or 'z' -- so the 'y' in "heavy" and the 'z' in "fez" count,
      * but not the 'y' in "yellow" (not case sensitive). We'll say that a y or z is at the end of a word if there is not an alphabetic
@@ -15,8 +17,29 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+//loop through string to see if letter is y or z && if next character is space or end of string.
+
+
+
+        Integer counter = 0;
+        Integer i = 0;
+
+        for(i = 0; i < input.length(); i++){
+            Character character = input.charAt(i);
+
+            if ((character.equals('y') || character.equals('z')) && (i + 1 >= input.length() || input.charAt(i +1) == ' ')){
+
+                counter++;
+            }
+         }
+        return counter;
     }
+
+    /*
+
+
+    */
+
 
     /**
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
@@ -27,7 +50,30 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
+
+    /*
+    nested for loop, when the character matches the first character does a character
+    StringBuilder.append(string1.charAt(1)
+
+     */
+
     public String removeString(String base, String remove){
+        String result = "";
+        for(Integer i = 0; i < base.length(); i++){
+            Character index = base.charAt(i);
+            if (index.equals(remove.charAt(0))){
+                if (remove.length() == 1){
+                    continue;
+                }
+
+            }else {
+                result += index;
+            }
+
+
+        }
+
+
         return null;
     }
 
@@ -51,7 +97,18 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+
+        for(Integer i = 0; i < input.length(); i++) {
+            Character current = input.charAt(i);
+            if (current.equals('g')) {
+                boolean gExists = false;
+                if (i > 0 && input.charAt(i - 1) == 'g') gExists = true;
+                if (i < input.length() - 1 && input.charAt(i + 1) == 'g') gExists = true;
+                if (!gExists) return false;
+
+            }
+        }
+        return true;
     }
 
 
@@ -63,6 +120,33 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        //Set a result counter variable
+        Integer result = 0;
+        //Set a character counter variable
+        Integer x = 1;
+        //Set a previous character variable
+        Character previous = null;
+
+        //Loop Through string input
+        for(int i = 0; i <  input.length(); i++) {
+            Character current = input.charAt(i);
+            if (current == previous) {
+                x++;
+            } else {
+                x = 1;
+            }
+            //If current character equals previous character add 1 to character counter
+            //Else set character counter to 1
+
+            if (x >= 3) {
+                result++;
+
+            }
+
+            //If character counter >= 3, add 1 to result counter
+            //set current character to previous character
+            previous = current;
+        }
+        return result;
     }
-}
+}//what is the char here. variable that saves the previous character outside of loop. also set counter outside of loop. if is same set couter to +=1
