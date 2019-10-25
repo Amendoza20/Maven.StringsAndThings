@@ -168,7 +168,7 @@ public class StringsAndThings {
                 previous = current;
             }
             return result;
-        }
-    }
+        }// this closes method count triple
+    }//this closes class
 
-//what is the char here. variable that saves the previous character outside of loop. also set counter outside of loop. if is same set couter to +=1
+//what is the char here. variable that saves the previous character outside of loop. also set counter outside of loop. if is same set counter to +=1
