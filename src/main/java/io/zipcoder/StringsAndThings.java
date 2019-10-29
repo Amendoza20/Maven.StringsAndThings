@@ -62,15 +62,10 @@ public class StringsAndThings {
                 if (remove.length() == 1) {
                     continue;
                 }
-
             } else {
                 result += index;
             }
-
-
         }
-
-
         return null;
     }
 
@@ -128,8 +123,16 @@ public class StringsAndThings {
             }
             return true;
             }
+/*
+ for(int i = 0; i < input.length()-1; i++)
+        {
+        if (input.charAt(i) == 'g' && input.charAt(i+1) == 'g'){
+        return true;
+        }
+        }
+        return false
 
-
+*/
 
 
         /**
